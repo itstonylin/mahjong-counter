@@ -1,0 +1,319 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+* {
+    box-sizing: border-box;
+}
+body,
+html {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background-color: #bfbfbf;
+    font-family: "Poppins", sans-serif;
+}
+button {
+    width: 10em;
+    height: 3em;
+    background-color: black;
+    color: white;
+    transition: 0.3s linear;
+    outline: none;
+    border: none;
+    border-radius: 0.5em;
+}
+button:hover {
+    cursor: pointer;
+    background-color: green;
+}
+/* INPUT INFO STYLES */
+
+#form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: skyblue;
+}
+#inputInfo-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    width: 100%;
+    margin-top: 1px;
+}
+.inputInfo {
+    border: 2px solid black;
+    padding: 2em;
+}
+.form-item {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 400px;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#form button {
+    margin: 2em 0;
+}
+#form p {
+    margin: 1em 2em 3em 2em;
+    text-align: center;
+}
+.inputInfo h2 {
+    text-align: center;
+    padding: 0;
+    margin: 0 0 0.5em 0;
+}
+.inputInfo1 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+.inputInfo2 {
+    grid-area: 2 / 1 / 3 / 2;
+}
+.inputInfo3 {
+    grid-area: 3 / 1 / 4 / 2;
+}
+.inputInfo4 {
+    grid-area: 4 / 1 / 5 / 2;
+}
+@media only screen and (min-width: 890px) {
+    #inputInfo-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+    .form-item {
+        justify-content: space-between;
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .inputInfo1 {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+    .inputInfo2 {
+        grid-area: 1 / 2 / 2 / 3;
+    }
+    .inputInfo3 {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+    .inputInfo4 {
+        grid-area: 2 / 2 / 3 / 3;
+    }
+
+    #form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+/* ===================================== */
+
+#main-container {
+    display: none;
+}
+/* CONTENT STYLES */
+
+#content-container {
+    border-bottom: 2px solid black;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(13, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+.roundsAndTurnsInfoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+.content {
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background-color: skyblue;
+}
+.content1 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+.content2 {
+    grid-area: 2 / 1 / 3 / 2;
+}
+.content3 {
+    grid-area: 3 / 1 / 4 / 2;
+}
+.content4 {
+    grid-area: 4 / 1 / 5 / 2;
+}
+.content5 {
+    grid-area: 5 / 1 / 6 / 2;
+}
+.content6 {
+    grid-area: 6 / 1 / 7 / 2;
+}
+.content7 {
+    grid-area: 7 / 1 / 8 / 2;
+}
+.content8 {
+    grid-area: 8 / 1 / 9 / 2;
+}
+.content9 {
+    grid-area: 9 / 1 / 10 / 2;
+}
+.content10 {
+    grid-area: 10 / 1 / 11 / 2;
+}
+.content11 {
+    grid-area: 11 / 1 / 12 / 2;
+}
+.content12 {
+    grid-area: 12 / 1 / 13 / 2;
+}
+.content13 {
+    grid-area: 13 / 1 / 14 / 2;
+}
+.content3,
+.content6,
+.content9,
+.content12 {
+    justify-content: space-evenly;
+}
+.red-circle {
+    visibility: hidden;
+}
+#undo-button {
+    display: block;
+    margin: 20px auto;
+}
+@media only screen and (min-width: 890px) {
+    #content-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(9, 1fr);
+        width: 100%;
+        /* height: 100vh; */
+        height: auto;
+    }
+    .content1 {
+        grid-area: 1 / 1 / 2 / 4;
+    }
+    .content2 {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+    .content3 {
+        grid-area: 2 / 2 / 4 / 4;
+    }
+    .content4 {
+        grid-area: 3 / 1 / 4 / 2;
+    }
+    .content5 {
+        grid-area: 4 / 1 / 5 / 2;
+    }
+    .content6 {
+        grid-area: 4 / 2 / 6 / 4;
+    }
+    .content7 {
+        grid-area: 5 / 1 / 6 / 2;
+    }
+    .content8 {
+        grid-area: 6 / 1 / 7 / 2;
+    }
+    .content9 {
+        grid-area: 6 / 2 / 8 / 4;
+    }
+    .content10 {
+        grid-area: 7 / 1 / 8 / 2;
+    }
+    .content11 {
+        grid-area: 8 / 1 / 9 / 2;
+    }
+    .content12 {
+        grid-area: 8 / 2 / 10 / 4;
+    }
+    .content13 {
+        grid-area: 9 / 1 / 10 / 2;
+    }
+    .roundsAndTurnsInfoContainer {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
+
+/* ===================================== */
+
+/* STATS & HISTORY STYLES */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid white;
+    color: white;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: rgb(72, 72, 72);
+}
+tr:nth-child(odd) {
+    background-color: rgb(24, 24, 24);
+}
+#history-container {
+    margin-bottom: 3em;
+}
+#stats-container,
+#history-container {
+    display: block;
+}
+#stats-container h2,
+#history-container h2 {
+    margin-left: 1em;
+}
+#stats-container table,
+#history-container table {
+    overflow-x: auto;
+}
+/* ===================================== */
+
+/* FOOTER STYLES */
+footer {
+    background-color: #151515;
+    color: white;
+    padding: 3em;
+    margin: 0;
+}
+
+#social-media-row-footer {
+    text-align: center;
+    padding: 0;
+}
+#social-media-row-footer li {
+    margin: 5px;
+    display: inline-block;
+    padding: 0;
+}
+#social-media-row-footer i {
+    color: white;
+    transition: 0.2s linear color;
+}
+#social-media-row-footer i:hover {
+    color: #3399ff;
+}
+footer p {
+    text-align: center;
+}
+
+/* ===================================== */

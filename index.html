@@ -1,0 +1,321 @@
+<!-- https://grid.layoutit.com/?id=K9pKxeL -->
+<!-- https://cssgrid-generator.netlify.app/ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mahjong Counter</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="favicon-mc.png" />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <!-- custom css -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- gather info -->
+    <form id="form">
+        <div id="inputInfo-container">
+            <div class="inputInfo1 inputInfo">
+                <h2>Player 1</h2>
+                <!-- name -->
+                <div class="form-item">
+                    <label class="name-label label" for="name-form-player1"> Name (名字)</label>
+                    <input type="text" class="name-input" placeholder="Player 1" id="name-form-player1" required />
+                </div>
+                <!-- position  -->
+                <div class="form-item">
+                    <label class="position-label label" for="position-form-player1"> Position (顺序)</label>
+                    <select class="position-dropdownlist" id="position-form-player1" required>
+                        <option selected value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <!-- money  -->
+                <div class="form-item">
+                    <label class="money-label label" for="money-form-player1"> Money (钱数)</label>
+                    <input type="number" class="money-input" value="100" id="money-form-player1" required />
+                </div>
+            </div>
+            <div class="inputInfo2 inputInfo">
+                <h2>Player 2</h2>
+                <!-- name -->
+                <div class="form-item">
+                    <label class="name-label label" for="name-form-player2"> Name (名字) </label>
+                    <input type="text" class="name-input" placeholder="Player 2" id="name-form-player2" required />
+                </div>
+                <!-- position  -->
+                <div class="form-item">
+                    <label class="position-label label" for="position-form-player2"> Position (顺序)</label>
+                    <select class="position-dropdownlist" id="position-form-player2" required>
+                        <option value="1">1</option>
+                        <option selected value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <!-- money  -->
+                <div class="form-item">
+                    <label class="money-label label" for="money-form-player2"> Money (钱数)</label>
+                    <input type="number" class="money-input" value="100" id="money-form-player2" required />
+                </div>
+            </div>
+            <div class="inputInfo3 inputInfo">
+                <h2>Player 3</h2>
+                <!-- name -->
+                <div class="form-item">
+                    <label class="name-label label" for="name-form-player3"> Name (名字)</label>
+                    <input type="text" class="name-input" placeholder="Player 3" id="name-form-player3" required />
+                </div>
+                <!-- position  -->
+                <div class="form-item">
+                    <label class="position-label label" for="position-form-player3"> Position (顺序) </label>
+                    <select class="position-dropdownlist" id="position-form-player3" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option selected value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <!-- money  -->
+                <div class="form-item">
+                    <label class="money-label label" for="money-form-player3"> Money (钱数)</label>
+                    <input type="number" value="100" class="money-input" id="money-form-player3" required />
+                </div>
+            </div>
+            <div class="inputInfo4 inputInfo">
+                <h2>Player 4</h2>
+                <!-- name -->
+                <div class="form-item">
+                    <label class="name-label label" for="name-form-player4"> Name (名字)</label>
+                    <input type="text" class="name-input" placeholder="Player 4" id="name-form-player4" required />
+                </div>
+                <!-- position  -->
+                <div class="form-item">
+                    <label class="position-label label" for="position-form-player4"> Position (顺序) </label>
+                    <select class="position-dropdownlist" id="position-form-player4" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option selected value="4">4</option>
+                    </select>
+                </div>
+                <!-- money  -->
+                <div class="form-item">
+                    <label class="money-label label" for="money-form-player4"> Money (钱数) </label>
+                    <input type="number" class="money-input" value="100" id="money-form-player4" required />
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="submit-button">Submit</button>
+
+        <p> For more information on how this website works please visit my <a
+                href="https://github.com/itstonylin/mahjong-counter/blob/master/README.md"> github</a> </p>
+    </form>
+
+    <!-- content -->
+    <main id="main-container">
+        <div id="content-container">
+            <div class="content1 roundsAndTurnsInfoContainer">
+                <h2>Game (局): <span id="game-num"> </span></h2>
+                <h2>Round (圈): <span id="round-number"> </span></h2>
+                <h2>Turns Left (剩余几把): <span id="turns-left"> </span></h2>
+            </div>
+            <div class="content2 content">
+                <h2 id="name-player1"></h2>
+            </div>
+            <div class="content3 content">
+                <h2 id="balance-player1" class="display-money">0</h2>
+                <h2 class="prize-won" id="player1-prize">0</h2>
+                <h2 id="display-wins-player1" class="display-wins-area">0</h2>
+                <h2 class="king" id="player1-king"></h2>
+            </div>
+            <div class="content4 content">
+                <h2 id="player1-red" class="red-circle">🔴</h2>
+                <input type="number" id="enter-money-player1" class="enter-money-area" />
+            </div>
+            <div class="content5 content">
+                <h2 id="name-player2" class="display-name"></h2>
+            </div>
+            <div class="content6 content">
+                <h2 id="balance-player2" class="display-money">0</h2>
+                <h2 class="prize-won" id="player2-prize">0</h2>
+                <h2 id="display-wins-player2" class="display-wins-area">0</h2>
+                <h2 class="king" id="player2-king"></h2>
+            </div>
+            <div class="content7 content">
+                <h2 id="player2-red" class="red-circle">🔴</h2>
+                <input type="number" id="enter-money-player2" class="enter-money-area" />
+            </div>
+            <div class="content8 content">
+                <h2 id="name-player3" class="display-name"></h2>
+            </div>
+            <div class="content9 content">
+                <h2 id="balance-player3" class="display-money">0</h2>
+                <h2 class="prize-won" id="player3-prize">0</h2>
+                <h2 id="display-wins-player3" class="display-wins-area">0</h2>
+                <h2 class="king" id="player3-king"></h2>
+            </div>
+            <div class="content10 content">
+                <h2 id="player3-red" class="red-circle">🔴</h2>
+                <input type="number" id="enter-money-player3" class="enter-money-area" />
+            </div>
+            <div class="content11 content">
+                <h2 id="name-player4" class="display-name"></h2>
+            </div>
+            <div class="content12 content">
+                <h2 id="balance-player4" class="display-money">0</h2>
+                <h2 class="prize-won" id="player4-prize">0</h2>
+                <h2 id="display-wins-player4" class="display-wins-area">0</h2>
+                <h2 class="king" id="player4-king"></h2>
+            </div>
+            <div class="content13 content">
+                <h2 id="player4-red" class="red-circle">🔴</h2>
+                <input type="number" id="enter-money-player4" class="enter-money-area" />
+            </div>
+
+        </div>
+
+        <button id="undo-button"> Undo</button>
+
+        <!-- stats -->
+        <div id="stats-container">
+            <h2>Statistics</h2>
+            <table>
+                <tr>
+                    <th>Category</th>
+                    <th id="stats-player1">Player1</th>
+                    <th id="stats-player2">Player2</th>
+                    <th id="stats-player3">Player3</th>
+                    <th id="stats-player4">Player4</th>
+                </tr>
+                <tr>
+                    <td>Highest (最高) $$$</td>
+                    <td id="player1-highscore">
+                    </td>
+                    <td id="player2-highscore">
+                    </td>
+                    <td id="player3-highscore">
+                    </td>
+                    <td id="player4-highscore">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Lowest (最低) $$$</td>
+                    <td id="player1-lowscore">
+                    </td>
+                    <td id="player2-lowscore">
+                    </td>
+                    <td id="player3-lowscore">
+                    </td>
+                    <td id="player4-lowscore">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Money Received (收到)</td>
+                    <td id="player1-moneymade">
+                        0
+                    </td>
+                    <td id="player2-moneymade">
+                        0
+                    </td>
+                    <td id="player3-moneymade">
+                        0
+                    </td>
+                    <td id="player4-moneymade">
+                        0
+                    </td>
+                </tr>
+                <tr>
+                    <td>Money Lost (失去)</td>
+                    <td id="player1-moneyLost">
+                    </td>
+                    <td id="player2-moneyLost">
+                    </td>
+                    <td id="player3-moneyLost">
+                    </td>
+                    <td id="player4-moneyLost">
+                    </td>
+                </tr>
+                </tr>
+                <tr>
+                    <td>Net Income (净收入)</td>
+                    <td id="player1-netIncome">
+                    </td>
+                    <td id="player2-netIncome">
+                    </td>
+                    <td id="player3-netIncome">
+                    </td>
+                    <td id="player4-netIncome">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Highest Single Win (单次赢最多)</td>
+                    <td id="player1-highest-money-received">
+                        0
+                    </td>
+                    <td id="player2-highest-money-received">
+                        0
+                    </td>
+                    <td id="player3-highest-money-received">
+                        0
+                    </td>
+                    <td id="player4-highest-money-received">
+                        0
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="history-container">
+            <h2>History</h2>
+            <table id="history">
+            </table>
+        </div>
+
+        <!-- footer -->
+        <footer>
+            <p>Let's Stay Connected!</p>
+            <ul id="social-media-row-footer">
+                <li>
+                    <a href="https://itstonylin.me/" target="_blank">
+                        <i class="fas fa-desktop fa-4x"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/itstonylin 
+                    " target="_blank">
+                        <i class="fab fa-github fa-4x"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/tony-lin-07a9361a0/
+                    " target="_blank">
+                        <i class="fab fa-linkedin-in fa-4x"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:itstonylin@outlook.com"> <i class="fas fa-envelope fa-4x" target="_blank"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/itstonylin/
+                    " target="_blank">
+                        <i class="fab fa-instagram fa-4x"></i>
+                    </a>
+                </li>
+            </ul>
+            <p>-- Reach Out To Me If You Have Any Opportunities Or Questions --</p>
+            <p>© Copyright Tony Lin 2020</p>
+        </footer>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
