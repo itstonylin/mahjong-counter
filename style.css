@@ -193,7 +193,7 @@ button:hover {
     display: block;
     margin: 20px auto;
 }
-@media only screen and (min-width: 890px) {
+@media only screen and (min-width: 750px) {
     #content-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
