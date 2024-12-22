@@ -195,13 +195,13 @@ let renderBalance = () => {
         let moneyBill = '<i class="fas fa-money-bill"></i>';
         document.getElementById("balance-player" + (i + 1)).innerHTML = moneyBill + " " + balance[i];
         if (balance[i] > 0){
-            document.getElementById("balance-player" + (i + 1)).color = 'green';
+            document.getElementById("balance-player" + (i + 1)).style.color = 'green';
         }
         else if (balance[i] < 0){
-            document.getElementById("balance-player" + (i + 1)).color = 'red';
+            document.getElementById("balance-player" + (i + 1)).style.color = 'red';
         }
         else{
-            document.getElementById("balance-player" + (i + 1)).color = 'black';
+            document.getElementById("balance-player" + (i + 1)).style.color = 'black';
         }
     }
     return balance;
