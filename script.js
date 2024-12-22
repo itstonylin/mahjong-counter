@@ -194,6 +194,15 @@ let renderBalance = () => {
     for (let i = 0; i < 4; i++) {
         let moneyBill = '<i class="fas fa-money-bill"></i>';
         document.getElementById("balance-player" + (i + 1)).innerHTML = moneyBill + " " + balance[i];
+        if (balance[i] > 0){
+            document.getElementById("balance-player" + (i + 1)).color = 'green';
+        }
+        else if (balance[i] < 0){
+            document.getElementById("balance-player" + (i + 1)).color = 'red';
+        }
+        else{
+            document.getElementById("balance-player" + (i + 1)).color = 'black';
+        }
     }
     return balance;
 };
