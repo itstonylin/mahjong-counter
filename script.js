@@ -1,3 +1,75 @@
+// const sqlite3 = require('sqlite3').verbose();
+
+// // Connect to the SQLite database (or create it if it doesn't exist)
+// let db = new sqlite3.Database('mahjong_counter.db');
+
+// // Create tables
+// db.serialize(() => {
+//   db.run(`CREATE TABLE IF NOT EXISTS Players (
+//     player_id INTEGER PRIMARY KEY AUTOINCREMENT,
+//     name TEXT NOT NULL,
+//     avatar TEXT,
+//     joined_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+//   )`);
+
+//   db.run(`CREATE TABLE IF NOT EXISTS Games (
+//     game_id INTEGER PRIMARY KEY AUTOINCREMENT,
+//     start_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+//     end_time TIMESTAMP,
+//     status TEXT CHECK(status IN ('ongoing', 'completed', 'paused')) DEFAULT 'ongoing'
+//   )`);
+
+//   db.run(`CREATE TABLE IF NOT EXISTS Rounds (
+//     round_id INTEGER PRIMARY KEY AUTOINCREMENT,
+//     game_id INTEGER,
+//     round_number INTEGER,
+//     dealer_id INTEGER,
+//     started_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+//     ended_at TIMESTAMP,
+//     FOREIGN KEY(game_id) REFERENCES Games(game_id),
+//     FOREIGN KEY(dealer_id) REFERENCES Players(player_id)
+//   )`);
+
+//   db.run(`CREATE TABLE IF NOT EXISTS PlayerScores (
+//     score_id INTEGER PRIMARY KEY AUTOINCREMENT,
+//     round_id INTEGER,
+//     player_id INTEGER,
+//     score INTEGER,
+//     points INTEGER,
+//     FOREIGN KEY(round_id) REFERENCES Rounds(round_id),
+//     FOREIGN KEY(player_id) REFERENCES Players(player_id)
+//   )`);
+
+//   db.run(`CREATE TABLE IF NOT EXISTS Hands (
+//     hand_id INTEGER PRIMARY KEY AUTOINCREMENT,
+//     round_id INTEGER,
+//     player_id INTEGER,
+//     tiles TEXT,
+//     actions TEXT,
+//     completed BOOLEAN,
+//     FOREIGN KEY(round_id) REFERENCES Rounds(round_id),
+//     FOREIGN KEY(player_id) REFERENCES Players(player_id)
+//   )`);
+
+//   db.run(`CREATE TABLE IF NOT EXISTS Actions (
+//     action_id INTEGER PRIMARY KEY AUTOINCREMENT,
+//     round_id INTEGER,
+//     player_id INTEGER,
+//     action TEXT CHECK(action IN ('draw', 'discard', 'pong', 'chow', 'kong', 'win')),
+//     tile TEXT,
+//     timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+//     FOREIGN KEY(round_id) REFERENCES Rounds(round_id),
+//     FOREIGN KEY(player_id) REFERENCES Players(player_id)
+//   )`);
+// });
+
+// // Close the database connection
+// db.close();
+
+
+
+
+
 // variables
 let position = [];
 let names = [];
@@ -175,7 +247,7 @@ let renderPrizeWon = () => {
     }
 };
 
-// shows how much money everyone has after a money input
+// shows how much money everyone has after a money inputnd sets balance colours
 let renderBalance = () => {
     let balance = [];
     for (let i = 0; i < 4; i++) {
@@ -204,8 +276,34 @@ let renderBalance = () => {
             document.getElementById("balance-player" + (i + 1)).style.color = 'black';
         }
     }
+
+    let temp = Math.max(...balance);
+    let temp1 = Math.min(...balance);
+    if (balance.some(item => item !== 0)) {
+        for (let i = 0; i < 4; i++) {
+            // Check if the current player's balance matches the max or min balance
+            if (balance[i] === temp) {
+                document.getElementById("name-player" + (i + 1)).style.color = 'yellow';
+            } 
+            else if (balance[i] === temp1){
+                document.getElementById("name-player" + (i + 1)).style.color = 'red';
+            }
+            else{
+                document.getElementById("name-player" + (i + 1)).style.color = 'black';
+            }
+        }
+    } else {
+        // If all items are 0, set all player colors to black
+        for (let i = 0; i < 4; i++) {
+            document.getElementById("name-player" + (i + 1)).style.color = 'black';
+        }
+    }
+    
+    // document.getElementById("name-player" + (1)).style.color = 'yellow';
     return balance;
 };
+
+
 // shows the round and turns left
 let renderGamesAndRoundsAndTurns = () => {
     turns = 16;
